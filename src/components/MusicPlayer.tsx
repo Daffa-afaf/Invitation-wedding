@@ -23,7 +23,7 @@ export default function MusicPlayer() {
 
   return (
     <>
-      <audio ref={audioRef} src="public\\audio\Westlife - Beautiful in white (Lyrics).mp3" loop />
+      <audio ref={audioRef} src="/audio/music.mp3" loop />
       <button
         onClick={toggle}
         aria-label={playing ? 'Pause musik' : 'Putar musik'}
