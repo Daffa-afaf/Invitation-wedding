@@ -35,8 +35,8 @@ export default function App() {
 
   return (
     <>
-      {/* Kunci Perubahan: MusicPlayer diletakkan di sini agar aktif sejak halaman cover awal dimuat */}
-      <MusicPlayer />
+      {/* PERBAIKAN: Mengirimkan status opened agar musik berputar tepat saat tombol diklik */}
+      <MusicPlayer shouldPlay={opened} />
 
       <AnimatePresence>
         {!opened && (
@@ -75,7 +75,6 @@ export default function App() {
             <Events />
             <DigitalEnvelope />
             <ThankYou />
-            {/* MusicPlayer di posisi bawah ini sudah dihapus */}
           </div>
         </motion.main>
       )}
