@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #15110E;
+  overscroll-behavior-y: none;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  color: #F3EAD8;
+}
+
+#root {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  background: #15110E;
+  box-shadow: 0 0 60px rgba(0,0,0,0.6);
+  overflow-x: hidden;
+}
+
+@media (min-width: 481px) {
+  #root {
+    border-left: 1px solid rgba(201,162,39,0.25);
+    border-right: 1px solid rgba(201,162,39,0.25);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9A227;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #15110E;
+}
+
+/* Corner ornament frame, reused as the site's signature motif */
+.ornament-corner {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.section-pad {
+  padding: 72px 28px;
+  position: relative;
+}
+
+.divider-flourish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto;
+}
+
+.divider-flourish .line {
+  height: 1px;
+  width: 48px;
+  background: linear-gradient(90deg, transparent, #C9A227, transparent);
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom warna pagination swiper agar sesuai tema gold */
+.gallery-swiper .swiper-pagination-bullet {
+  background: #F3EAD8 !important;
+  opacity: 0.4;
+}
+.gallery-swiper .swiper-pagination-bullet-active {
+  background: #C9A227 !important;
+  opacity: 1;
+  width: 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
