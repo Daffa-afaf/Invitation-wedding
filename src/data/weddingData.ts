@@ -105,7 +105,7 @@ export const events = [
 // Amplop digital — rekening & QRIS masing-masing mempelai
 export const digitalGifts = [
   {
-    name: 'Dani Roza1q Ihsanuddin',
+    name: 'Dani Rozaq Ihsanuddin',
     bank: 'BNI',
     accountNumber: '0435293106',
     qrImage: '/images/qr/Bni-logo.png',
