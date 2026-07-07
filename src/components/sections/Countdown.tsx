@@ -41,7 +41,7 @@ export default function Countdown() {
 
   return (
     // 1. PERBAIKAN BACKGROUND LUAR: Diubah menjadi hitam-cokelat solid (#120e0c) polos agar warna merah pudar tertutup total
-    <section className="section-pad bg-[#120e0c] relative overflow-hidden">
+    <section className="section-pad bg-[#120E0C] relative overflow-hidden" style={{ backgroundImage: 'radial-gradient(rgba(201, 162, 39, 0.15) 1px, transparent 1px)', backgroundSize: '24px 24px' }}>
       {/* Aksen cahaya emas redup di latar belakang agar tidak flat */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gold/5 rounded-full blur-[90px] pointer-events-none" />
 
@@ -64,9 +64,6 @@ export default function Countdown() {
         </div>
 
         <h2 className="font-display text-3xl text-cream tracking-wide">Menghitung Hari</h2>
-        <p className="font-body text-xs text-cream/60 mt-3 max-w-[240px] mx-auto leading-relaxed">
-          Menuju hari kami memulai perjalanan bersama, selamanya.
-        </p>
 
         {isPast ? (
           <p className="font-script text-2xl text-gold-light mt-8 animate-pulse">Hari bahagia telah tiba!</p>

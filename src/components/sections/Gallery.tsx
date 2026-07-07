@@ -15,7 +15,7 @@ export default function Gallery() {
   const [active, setActive] = useState<number | null>(null)
 
   return (
-    <section className="section-pad bg-ink">
+    <section className="section-pad relative overflow-hidden bg-gradient-to-b from-[#120e0c] via-[#16110f] to-[#120e0c]">
       <div className="text-center mb-8">
         <p className="font-body uppercase tracking-[0.25em] text-xs text-gold-light">
           Our Gallery
@@ -70,6 +70,18 @@ export default function Gallery() {
           ))}
         </Swiper>
       </div>
+
+      {/* Teks Petunjuk Geser Baru (Taruh di bawah container Swiper) */}
+      <motion.p 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 0.5 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.5, duration: 1 }}
+        className="font-body text-[10px] uppercase tracking-[0.2em] text-cream text-center -mt-6 mb-4 animate-pulse"
+        style={{ animationDuration: '3s' }}
+      >
+        ← Geser untuk melihat foto lainnya →
+      </motion.p>
 
       {/* Lightbox Pop-up saat foto diklik perbesar */}
       <AnimatePresence>

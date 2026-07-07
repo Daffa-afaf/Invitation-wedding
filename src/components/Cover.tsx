@@ -29,7 +29,7 @@ export default function Cover({ guestName, onOpen }: CoverProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="relative z-10 flex flex-col items-center pt-10 px-6 text-center"
+        className="relative z-10 flex flex-col items-center pt-20 px-6 text-center"
       >
         <span className="font-body uppercase tracking-[0.3em] text-xs text-gold-light mb-4">
           The Wedding Of

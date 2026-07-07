@@ -5,8 +5,7 @@ import { Divider } from '../Ornament'
 export default function LoveStory() {
   return (
     // Latar belakang menggunakan warna solid gelap senada dengan halaman lainnya
-    <section className="section-pad bg-[#120e0c] relative overflow-hidden">
-      
+    <section className="section-pad relative overflow-hidden bg-gradient-to-b from-[#120E0C] via-[#1B1411] to-[#0F0C0A]">
       <div className="text-center mb-12 relative z-10">
         <p className="font-body uppercase tracking-[0.25em] text-[11px] text-gold-light opacity-90">
           Our Love Story

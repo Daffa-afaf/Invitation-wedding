@@ -48,7 +48,7 @@ function ProfileCard({
 
 export default function CoupleProfile() {
   return (
-    <section className="section-pad bg-ink">
+    <section className="section-pad relative overflow-hidden bg-gradient-to-b from-[#120E0C] via-[#1F1714] to-[#120E0C]">
       <div className="text-center mb-10">
         <p className="font-body uppercase tracking-[0.25em] text-xs text-gold-light">
           Kedua Mempelai
