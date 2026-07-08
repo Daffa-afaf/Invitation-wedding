@@ -12,7 +12,7 @@ export const coupleInfo = {
   brideFullName: 'Putri Indah Lestari',
   brideNickname: 'Putri',
   brideChildOrder: 'Putri kedua dari Bapak Kanafi Heriyanto & Ibu Sri Wahyuni',
-  brideInstagram: '@putriindahl',
+  brideInstagram: '@putriindaahl',
   // PERBAIKAN: Jalur foto profil menggunakan slash '/' dan tanpa kata 'public'
   groomPhoto: '/images/couple/profil3.jpeg',
   bridePhoto: '/images/couple/profil5.jpeg',
@@ -77,7 +77,7 @@ export const loveStory = [
 export const galleryPhotos = [
   { src: '/images/gallery/gallery1.jpeg', alt: 'Foto prewedding Dani & Putri 1' },
   { src: '/images/gallery/gallery2.jpeg', alt: 'Foto prewedding Dani & Putri 2' },
-  { src: '/images/gallery/gallery3.jpeg', alt: 'Foto prewedding Dani & Putri 3' },
+  { src: '/images/gallery/gallery3(1).jpeg', alt: 'Foto prewedding Dani & Putri 3' },
   { src: '/images/gallery/gallery4.jpeg', alt: 'Foto prewedding Dani & Putri 4' },
   { src: '/images/gallery/gallery5.jpeg', alt: 'Foto prewedding Dani & Putri 5' },
 ]
@@ -105,7 +105,7 @@ export const events = [
 // Amplop digital — rekening & QRIS masing-masing mempelai
 export const digitalGifts = [
   {
-    name: 'Dani Rozaq Ihsanuddin',
+    name: 'Danni Rozaq Ihsanuddin',
     bank: 'BNI',
     accountNumber: '0435293106',
     qrImage: '/images/qr/Bni-logo.png',

@@ -33,7 +33,7 @@ export default function Countdown() {
     downloadIcsEvent({
       title: `Pernikahan ${coupleInfo.groomNickname} & ${coupleInfo.brideNickname}`,
       description: 'Undangan pernikahan — jangan lupa hadir dan berikan doa restu.',
-      location: 'Semarang, Jawa Tengah',
+      location: 'Ungaran, Semarang, Jawa Tengah',
       start: new Date(weddingDateTime),
       durationHours: 5,
     })

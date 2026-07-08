@@ -24,7 +24,7 @@ export default function Hero() {
         className="relative z-10"
       >
         <p className="font-body uppercase tracking-[0.3em] text-xs text-gold-light mb-4">
-          Undangan Pernikahan
+          Undangan Ngunduh Mantu
         </p>
         <h1 className="font-display text-5xl text-cream">
           {coupleInfo.groomNickname}
