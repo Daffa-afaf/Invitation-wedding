@@ -25,10 +25,10 @@ function ProfileCard({
       className="flex flex-col items-center text-center gap-3"
     >
       <div className="relative">
-        <div className="w-36 h-36 rounded-full overflow-hidden border-2 border-gold">
+        <div className="w-36 h-44 rounded-t-[100px] rounded-b-none overflow-hidden border-2 border-gold">
           <img src={photo} alt={name} className="w-full h-full object-cover" />
         </div>
-        <div className="absolute -inset-1.5 rounded-full border border-gold/30" />
+        <div className="absolute -inset-1.5 rounded-t-[100px] rounded-b-none border border-gold/30" />
       </div>
       <h3 className="font-display text-2xl text-cream mt-1">{name}</h3>
       <p className="font-body text-xs text-cream/70 leading-relaxed max-w-[220px]">

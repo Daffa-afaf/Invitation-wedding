@@ -9,7 +9,6 @@ import Countdown from './components/sections/Countdown'
 import LoveStory from './components/sections/LoveStory'
 import Gallery from './components/sections/Gallery'
 import Events from './components/sections/Events'
-import DigitalEnvelope from './components/sections/DigitalEnvelope'
 import ThankYou from './components/sections/ThankYou'
 
 // 1. IMPORT VARIABEL BACKGROUND UTAMA DI SINI
@@ -73,7 +72,6 @@ export default function App() {
             <LoveStory />
             <Gallery />
             <Events />
-            <DigitalEnvelope />
             <ThankYou />
           </div>
         </motion.main>

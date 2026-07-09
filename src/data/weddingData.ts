@@ -77,9 +77,9 @@ export const loveStory = [
 export const galleryPhotos = [
   { src: '/images/gallery/gallery1.jpeg', alt: 'Foto prewedding Dani & Putri 1' },
   { src: '/images/gallery/gallery2.jpeg', alt: 'Foto prewedding Dani & Putri 2' },
-  { src: '/images/gallery/gallery3(1).jpeg', alt: 'Foto prewedding Dani & Putri 3' },
+  { src: '/images/gallery/gallery5.jpeg', alt: 'Foto prewedding Dani & Putri 3' },
   { src: '/images/gallery/gallery4.jpeg', alt: 'Foto prewedding Dani & Putri 4' },
-  { src: '/images/gallery/gallery5.jpeg', alt: 'Foto prewedding Dani & Putri 5' },
+  { src: '/images/gallery/gallery6.jpeg', alt: 'Foto prewedding Dani & Putri 5' },
 ]
 
 // Acara / rangkaian kegiatan
