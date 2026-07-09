@@ -64,7 +64,7 @@ export default function App() {
           <div className="absolute inset-0 bg-black/20 pointer-events-none" />
 
           {/* Konten Undangan Utama */}
-          <div className="relative z-10">
+          <div className="relative z-10 flex flex-col bg-[#120e0c] w-full">
             <Hero />
             <QuranVerse />
             <CoupleProfile />

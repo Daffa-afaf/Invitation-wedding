@@ -32,7 +32,7 @@ export default function Countdown() {
   const handleSaveDate = () => {
     downloadIcsEvent({
       title: `Pernikahan ${coupleInfo.groomNickname} & ${coupleInfo.brideNickname}`,
-      description: 'Undangan pernikahan — jangan lupa hadir dan berikan doa restu.',
+      description: 'Undangan ngunduh mantu — jangan lupa hadir dan berikan doa restu.',
       location: 'Ungaran, Semarang, Jawa Tengah',
       start: new Date(weddingDateTime),
       durationHours: 5,
@@ -48,7 +48,7 @@ export default function Countdown() {
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: false, margin: '-50px' }}
         transition={{ duration: 0.8 }}
         // 2. PERBAIKAN KOTAK BESAR: Menggunakan gradasi gelap premium dari cokelat tua ke hitam, menyatu dengan seksi acara
         className="relative rounded-3xl bg-gradient-to-b from-[#1c1613] to-[#14100e] border border-gold/20 px-6 py-10 text-center shadow-[0_20px_50px_rgba(0,0,0,0.7)]"

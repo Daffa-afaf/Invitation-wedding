@@ -20,7 +20,7 @@ function ProfileCard({
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: false, margin: '-50px' }}
       transition={{ duration: 0.7, delay }}
       className="flex flex-col items-center text-center gap-3"
     >

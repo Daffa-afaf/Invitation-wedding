@@ -23,7 +23,7 @@ export default function LoveStory() {
             key={story.title}
             initial={{ opacity: 0, x: -16 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
+            viewport={{ once: false, margin: '-40px' }}
             transition={{ duration: 0.7, delay: idx * 0.1 }}
             className="relative pl-6 md:pl-8"
           >

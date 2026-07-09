@@ -15,73 +15,90 @@ export default function Gallery() {
   const [active, setActive] = useState<number | null>(null)
 
   return (
-    <section className="section-pad relative overflow-hidden bg-gradient-to-b from-[#120e0c] via-[#16110f] to-[#120e0c]">
-      <div className="text-center mb-8">
-        <p className="font-body uppercase tracking-[0.25em] text-xs text-gold-light">
-          Our Gallery
-        </p>
-        <Divider />
-        <p className="font-body text-sm text-cream/70 max-w-[260px] mx-auto">
-          Sekilas momen indah yang diabadikan tentang kami.
-        </p>
-      </div>
+    // UBAH: Menggunakan motion.section dengan efek spring bolak-balik yang interaktif
+    <motion.section 
+      initial={{ opacity: 0, scale: 0.85, y: 40 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
+      viewport={{ once: false, margin: "-100px" }} // Aktif berulang saat scroll naik/turun
+      transition={{ 
+        type: "spring", 
+        stiffness: 90, 
+        damping: 14 
+      }}
+      className="section-pad relative overflow-hidden bg-gradient-to-b from-[#120e0c] via-[#16110f] to-[#120e0c]"
+    >
+      {/* Efek pendaran cahaya redup latar belakang agar senada dengan seksi lainnya */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gold/5 rounded-full blur-[100px] pointer-events-none z-0" />
 
-      {/* Slider Container */}
-      <div className="w-full py-4">
-        <Swiper
-          effect={'coverflow'}
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={1.2} // Menampilkan foto utama & sedikit potongan foto di kanan-kiri
-          spaceBetween={16}
-          loop={galleryPhotos.length > 1} // Aktifkan loop jika foto lebih dari 1
-          coverflowEffect={{
-            rotate: 0,
-            stretch: 0,
-            depth: 100,
-            modifier: 2.5,
-            slideShadows: false,
-          }}
-          pagination={{ clickable: true }}
-          modules={[EffectCoverflow, Pagination]}
-          className="gallery-swiper pb-12"
+      {/* Konten Utama dibungkus z-10 agar berada di atas layer pendaran cahaya */}
+      <div className="relative z-10 w-full">
+        <div className="text-center mb-8">
+          <p className="font-body uppercase tracking-[0.25em] text-xs text-gold-light">
+            Our Gallery
+          </p>
+          <Divider />
+          <p className="font-body text-sm text-cream/70 max-w-[260px] mx-auto">
+            Sekilas momen indah yang diabadikan tentang kami.
+          </p>
+        </div>
+
+        {/* Slider Container */}
+        <div className="w-full py-4">
+          <Swiper
+            effect={'coverflow'}
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerView={1.2}
+            spaceBetween={16}
+            loop={galleryPhotos.length > 1}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              depth: 100,
+              modifier: 2.5,
+              slideShadows: false,
+            }}
+            pagination={{ clickable: true }}
+            modules={[EffectCoverflow, Pagination]}
+            className="gallery-swiper pb-12"
+          >
+            {galleryPhotos.map((photo, idx) => (
+              <SwiperSlide key={photo.src}>
+                <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden border border-gold/25 bg-black/40 shadow-xl shadow-black/50">
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                  
+                  {/* Tombol Perbesar Foto */}
+                  <button
+                    onClick={() => setActive(idx)}
+                    className="absolute bottom-4 right-4 z-10 w-9 h-9 rounded-full bg-ink/70 border border-gold/40 flex items-center justify-center text-gold-light backdrop-blur-sm shadow-md"
+                    aria-label="Perbesar foto"
+                  >
+                    <Maximize2 size={14} />
+                  </button>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* Teks Petunjuk Geser Baru */}
+        <motion.p 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.5 }}
+          viewport={{ once: false, margin: '-50px' }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="font-body text-[10px] uppercase tracking-[0.2em] text-cream text-center -mt-6 mb-4 animate-pulse"
+          style={{ animationDuration: '3s' }}
         >
-          {galleryPhotos.map((photo, idx) => (
-            <SwiperSlide key={photo.src}>
-              <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden border border-gold/25 bg-black/40 shadow-xl shadow-black/50">
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                
-                {/* Tombol Perbesar Foto */}
-                <button
-                  onClick={() => setActive(idx)}
-                  className="absolute bottom-4 right-4 z-10 w-9 h-9 rounded-full bg-ink/70 border border-gold/40 flex items-center justify-center text-gold-light backdrop-blur-sm shadow-md"
-                  aria-label="Perbesar foto"
-                >
-                  <Maximize2 size={14} />
-                </button>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+          &larr; Geser untuk melihat foto lainnya &rarr;
+        </motion.p>
       </div>
-
-      {/* Teks Petunjuk Geser Baru (Taruh di bawah container Swiper) */}
-      <motion.p 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.5 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.5, duration: 1 }}
-        className="font-body text-[10px] uppercase tracking-[0.2em] text-cream text-center -mt-6 mb-4 animate-pulse"
-        style={{ animationDuration: '3s' }}
-      >
-        ← Geser untuk melihat foto lainnya →
-      </motion.p>
 
       {/* Lightbox Pop-up saat foto diklik perbesar */}
       <AnimatePresence>
@@ -111,6 +128,6 @@ export default function Gallery() {
           </motion.div>
         )}
       </AnimatePresence>
-    </section>
+    </motion.section> // UBAH: Menutup dengan tag motion.section
   )
 }
