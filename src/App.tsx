@@ -69,9 +69,9 @@ export default function App() {
             <QuranVerse />
             <CoupleProfile />
             <Countdown />
+            <Events />
             <LoveStory />
             <Gallery />
-            <Events />
             <ThankYou />
           </div>
         </motion.main>
