@@ -13,6 +13,7 @@ import ThankYou from './components/sections/ThankYou'
 
 // 1. IMPORT VARIABEL BACKGROUND UTAMA DI SINI
 import { mainBackground } from './data/weddingData'
+import DigitalEnvelope from './components/sections/DigitalEnvelope'
 
 export default function App() {
   const [opened, setOpened] = useState(false)
@@ -72,6 +73,7 @@ export default function App() {
             <Events />
             <LoveStory />
             <Gallery />
+            <DigitalEnvelope />
             <ThankYou />
           </div>
         </motion.main>

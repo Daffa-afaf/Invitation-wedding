@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-// 1. GANTI KODE IMPORT DI BAWAH INI (coverBackground diubah menjadi mainBackground)
 import { coupleInfo, weddingDateDisplay, mainBackground } from '../../data/weddingData'
 import { Divider } from '../Ornament'
 
@@ -7,7 +6,6 @@ export default function Hero() {
   return (
     <section
       className="relative min-h-[92vh] flex flex-col items-center justify-center text-center px-8 overflow-hidden"
-      // 2. GANTI PROP STYLE DI BAWAH INI AGAR MENGGUNAKAN mainBackground
       style={{
         backgroundImage: `url(${mainBackground})`,
         backgroundSize: 'cover',

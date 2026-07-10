@@ -15,7 +15,6 @@ function TimeCard({ value, label }: { value: number; label: string }) {
       // PERBAIKAN KARTU ANGKA: Putih gading mewah dengan border emas tipis dan bayangan lembut
       className="flex-1 bg-[#F3EAD8] border border-gold/20 rounded-2xl shadow-[0_10px_25px_rgba(0,0,0,0.5)] py-4 flex flex-col items-center"
     >
-      {/* Warna angka diubah ke maroon tua berkelas agar kontras */}
       <span className="font-display text-3xl text-[#5A1818] font-bold leading-none">
         {String(value).padStart(2, '0')}
       </span>
@@ -41,7 +40,7 @@ export default function Countdown() {
 
   return (
     // 1. PERBAIKAN BACKGROUND LUAR: Diubah menjadi hitam-cokelat solid (#120e0c) polos agar warna merah pudar tertutup total
-    <section className="section-pad bg-[#120E0C] relative overflow-hidden" style={{ backgroundImage: 'radial-gradient(rgba(201, 162, 39, 0.15) 1px, transparent 1px)', backgroundSize: '24px 24px' }}>
+    <section className="section-pad bg-[#120E0C] relative overflow-hidden" style={{ backgroundImage: 'radial-gradient(rgba(201, 162, 39, 0.15) 2px, transparent 2px)', backgroundSize: '24px 24px' }}>
       {/* Aksen cahaya emas redup di latar belakang agar tidak flat */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gold/5 rounded-full blur-[90px] pointer-events-none" />
 

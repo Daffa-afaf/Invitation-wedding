@@ -34,7 +34,7 @@ export default function Gallery() {
       <div className="relative z-10 w-full">
         <div className="text-center mb-8">
           <p className="font-body uppercase tracking-[0.25em] text-xs text-gold-light">
-            Our Gallery
+            Gallery
           </p>
           <Divider />
           <p className="font-body text-sm text-cream/70 max-w-[260px] mx-auto">
