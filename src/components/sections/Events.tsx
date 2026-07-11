@@ -5,12 +5,14 @@ import { Divider } from "../Ornament";
 
 export default function Events() {
   return (
-    // Menggunakan gradasi radial halus agar bagian tengah seksi ini terlihat agak menyala/terang (tidak flat)
-    <section className="section-pad bg-radial-theme relative overflow-hidden bg-[#120e0c]">
-      {/* Dekorasi lingkaran cahaya mewah di latar belakang */}
-      <div className="absolute top-1/4 -left-20 w-64 h-64 bg-gold/5 rounded-full blur-[80px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-20 w-64 h-64 bg-maroon-dark/10 rounded-full blur-[80px] pointer-events-none" />
-
+    <section 
+      className="section-pad relative overflow-hidden bg-[#120e0c]"
+      style={{ 
+        backgroundImage: 'radial-gradient(rgba(201, 162, 39, 0.08) 1.2px, transparent 1.2px), radial-gradient(rgba(201, 162, 39, 0.05) 1.2px, transparent 1.2px)',
+        backgroundSize: '32px 32px',
+        backgroundPosition: '0 0, 16px 16px' // Trik CSS untuk membuat posisi titik bergeser silang estetik
+      }}
+    >        
       <div className="text-center mb-12 relative z-10">
         <p className="font-body uppercase tracking-[0.3em] text-[11px] text-gold-light opacity-90">
           Save The Date

@@ -12,7 +12,7 @@ export default function DigitalEnvelope() {
     setTimeout(() => setCopiedIndex(null), 2000);
   };
 
-  // DATA UTAMA: Menyesuaikan nomor rekening asli BNI dari weddingData kamu
+  // DATA UTAMA: Menggunakan data asli BNI Danni dari kode Anda
   const dataBank = {
     name: "Danni Rozaq Ihsanuddin",
     provider: "BNI",
@@ -22,7 +22,7 @@ export default function DigitalEnvelope() {
 
   const giftAddress = {
     receiver: "Danni Rozaq Ihsanuddin",
-    phone: "0857-4749-5826",
+    phone: "085747495826",
     detail:
       "Perumahan Kutilang Sari I E12B, RT04/RW09, Susukan, Ungaran Timur, 50516",
   };
@@ -32,8 +32,9 @@ export default function DigitalEnvelope() {
       className="section-pad relative overflow-hidden bg-[#120e0c]"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(201, 162, 39, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(201, 162, 39, 0.05) 1px, transparent 1px)",
-        backgroundSize: "30px 30px",
+          "radial-gradient(rgba(201, 162, 39, 0.08) 1.2px, transparent 1.2px), radial-gradient(rgba(201, 162, 39, 0.05) 1.2px, transparent 1.2px)",
+        backgroundSize: "32px 32px",
+        backgroundPosition: "0 0, 16px 16px", // Trik CSS untuk membuat posisi titik bergeser silang estetik
       }}
     >
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
@@ -52,7 +53,7 @@ export default function DigitalEnvelope() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-6 relative z-10 px-3 w-full">
+      <div className="flex flex-col gap-6 relative z-10 px-3 w-full max-w-[440px] mx-auto">
         {/* ================= KARTU ATAS: TRANSFER BANK BNI ================= */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -65,7 +66,7 @@ export default function DigitalEnvelope() {
           <div className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-gold/20 rounded-br" />
 
           {/* Baris Atas Kartu Bank */}
-          <div className="flex justify-between items-start w-full mb-6">
+          <div className="flex justify-between items-center w-full mb-5">
             <div className="flex flex-col">
               <span className="font-body text-[10px] uppercase tracking-[0.25em] text-gold-light/60 font-bold leading-none">
                 Nama Penerima
@@ -75,12 +76,11 @@ export default function DigitalEnvelope() {
               </h3>
             </div>
 
-            {/* TEMPAT LOGO GAMBAR BNI: Otomatis muncul sejajar lurus dengan tulisan */}
+            {/* TEMPAT LOGO GAMBAR BNI */}
             <div className="flex items-center justify-end pt-0.5">
               <img
                 src={dataBank.logoImg}
                 alt="Logo BNI"
-                // Ukuran proporsional minimalis (h-4) agar setara dengan teks penunjuk kiri
                 className="h-4 max-w-[65px] w-auto object-contain opacity-95 brightness-110"
                 onError={(e) => {
                   e.currentTarget.style.display = "none";
@@ -92,29 +92,32 @@ export default function DigitalEnvelope() {
             </div>
           </div>
 
-          {/* Baris Bawah: Nomor Rekening BNI dan Tombol Salin */}
-          <div className="flex justify-between items-center gap-3 bg-black/40 border border-gold/10 p-3.5 rounded-2xl shadow-inner w-full">
-            <div className="flex flex-col pl-1">
+          {/* PERBAIKAN REVISI UTAMA: Mengubah susunan menjadi flex-col (Atas-Bawah) agar nomor rekening leluasa */}
+          <div className="flex flex-col gap-3 bg-black/40 border border-gold/10 p-4 rounded-2xl shadow-inner w-full text-center">
+            <div className="py-1">
               <span className="font-mono text-base tracking-[0.15em] font-semibold text-gold-light">
-                {dataBank.accountNumber.replace(/(\d{4})/g, "$1 ").trim()}
+                {dataBank.accountNumber}
               </span>
             </div>
 
+            {/* Tombol salin dipindah ke bawah, melebar penuh ke samping (Full Width) */}
+            {/* KODE BARU: Tombol Rekening saat sukses tetap berwarna emas mewah */}
             <button
               onClick={() => handleCopy(dataBank.accountNumber, 1)}
-              className={`inline-flex items-center justify-center gap-2 border transition-all duration-300 font-body text-xs font-medium tracking-wider px-4 py-2 rounded-xl shadow-md flex-shrink-0 ${
+              className={`inline-flex items-center justify-center gap-2 border transition-all duration-300 font-body text-xs font-semibold tracking-wider py-2.5 rounded-xl shadow-md w-full ${
                 copiedIndex === 1
-                  ? "bg-emerald-900/30 border-emerald-500/40 text-emerald-300 scale-[0.98]"
+                  ? "bg-gold/20 border-gold/40 text-gold-light scale-[0.98]" // <-- Solusi: Menggunakan emas transparan saat tersalin
                   : "bg-gold/10 border-gold/20 text-gold-light hover:bg-gold/20 active:scale-[0.97]"
               }`}
             >
               {copiedIndex === 1 ? (
                 <>
-                  <Check size={13} className="text-emerald-400" /> Tersalin
-                </>
+                  <Check size={13} className="text-gold-light" /> Nomor Rekening
+                  Tersalin
+                </> // Ikon centang berwarna emas
               ) : (
                 <>
-                  <CreditCard size={12} /> Salin Rekening
+                  <CreditCard size={12} /> Salin Nomor Rekening
                 </>
               )}
             </button>
@@ -151,20 +154,23 @@ export default function DigitalEnvelope() {
               <p className="font-semibold text-gold-light text-sm mb-1">
                 {giftAddress.receiver} ({giftAddress.phone})
               </p>
-              <p className="text-cream/60">{giftAddress.detail}</p>
+              <p className="text-cream/60 leading-relaxed">
+                {giftAddress.detail}
+              </p>
             </div>
 
+            {/* PERBAIKAN SINTAKS: Memperbaiki penutupan tag tombol yang sempat rusak/terpotong */}
             <button
               onClick={() => handleCopy(giftAddress.detail, 2)}
-              className={`inline-flex items-center justify-center gap-2 border transition-all duration-300 font-body text-xs font-medium tracking-wider py-2.5 rounded-xl shadow-md w-full ${
+              className={`inline-flex items-center justify-center gap-2 border transition-all duration-300 font-body text-xs font-semibold tracking-wider py-2.5 rounded-xl shadow-md w-full ${
                 copiedIndex === 2
-                  ? "bg-emerald-900/30 border-emerald-500/40 text-emerald-300 scale-[0.98]"
+                  ? "bg-gold/20 border-gold/40 text-gold-light scale-[0.98]" // <-- Solusi: Menghapus warna hijau, ganti dengan emas redup anggun
                   : "bg-gold/10 border-gold/20 text-gold-light hover:bg-gold/20 active:scale-[0.97]"
               }`}
             >
               {copiedIndex === 2 ? (
                 <>
-                  <Check size={13} className="text-emerald-400" /> Alamat
+                  <Check size={13} className="text-gold-light" /> Alamat
                   Berhasil Disalin
                 </>
               ) : (
