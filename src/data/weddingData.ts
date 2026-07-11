@@ -89,7 +89,7 @@ export const events = [
     date: 'Sabtu, 06 Juni 2026',
     time: '08.00 – 09.30 WIB',
     location: 'Kediaman Mempelai Wanita',
-    address: 'Jl. Damai-Gg. Rahayu',
+    address: 'Jl. Damai, Gg. Rahayu, Duri - Riau',
     mapsUrl: 'https://maps.app.goo.gl/rJ8qmuhYU5Um9S6X7',
   },
   {
